@@ -1,0 +1,41 @@
+Day 10-11
+The entire performance of your solutions depends on the data modelling.
+To learn: how to work with data models, working with tables, dimension and hierachies.
+1) Data Prep: power Query
+2) Data Viz: you won't be able to create proper analysis if the data is not properly cleaned
+3) Data Modelling: avoiding data redundancy
+
+Benefits of a good data model
+i) Accurate reports ii) Faster data exploration iii)Simpler aggregations iv) Easier to maintain
+Some tables are stored for keeping permanent data (dimensions) e.g bio data, school matric id, acct no, and others for continuous activity (facts) e.g attendance record, banking transactions. 
+The dimension and fact will lead us have two types of popular models called } star schema, snowflake schema. The star models dimension tables relationship with the fact table.
+What is Normalization? (To read more on this)
+
+DAX Data Analysis Expressions is a combination of functions, used to build formulas in power BI. As a Data analyst you're summarizing your data. Data is the full event, viz and analysis are the summary. 
+
+A measure is a summarization of a data using DAX, It is way of defining aggregated data
+Calculated columns: are additional columns added to your data using DAX.
+Difference between measures and calculated columns
+CC add new columns to the data you already have, while Measures do not
+Measure are formulas you use to create new chart, created on demand. They are calculated based on filters.
+
+To know DAX that you must know how to use;
+1) Functions: allows you perform an operation.
+i)syntax: Input that the function wants.
+ii) Type: does the function give you multiple data point (return plenty things table function) or single data point(scalar e.g sum, count, average)
+
+For the sake of flow you can create (RELATED: it goes to a related table and fetch the value in that table)
+
+to create a table & to generate a base table for time related analysis in the report. to show standard date, year, element of calendar.
+CALENDERAUTO([squarebrackets mean it is optional so you can choose to ignore it])
+FILTER (table function)
+
+ii)Measures---} Evaluation Context
+a) Helps you apply formula on every row (b) and a on filter
+by combining scalar and table function 
+Revenue (WO Organic) = SUMX(
+    FILTER(Sales, RELATED('Sales Reps'[Sales Team]) <> "Organic"), 
+    Sales[Sales])
+
+CALCULATE used to quickly modify the filters coming from your formula. e.g to show the previous month revenue. 
+Previous Month Revenue = CALCULATE([Revenue (WO Organic)], PREVIOUSMONTH(Sales[Order Date].[Date]))
