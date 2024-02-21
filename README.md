@@ -1,4 +1,4 @@
-# Project Name: 30DaysofLearningDataAnlytics
+# Project Name: 30DaysofLearningDataAnalytics
 
 -------
 ## Project Objective: Problem Statement
