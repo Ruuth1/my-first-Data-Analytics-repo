@@ -1,4 +1,4 @@
-# Project Name: my-first-Data-Analytics-repo
+# Project Name: 30DaysofLearningDataAnlytics
 
 -------
 ## Project Objective: Problem Statement
